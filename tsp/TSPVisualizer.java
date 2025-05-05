@@ -1,6 +1,6 @@
 /* *****************************************************************************
  *  Grupo:
- *  Alunos integrantes:
+ *  Alunos integrantes: Pedro Vieira, Samir Alves, Luiz Arthur, Rafael Luka, Leonardo Coelho
  *
  *  Descrição:  Implementa um cliente interativo que constrói um ciclo (Tour)
  *              usando a heurística do vizinho mais próximo (vermelho)
@@ -20,6 +20,10 @@
  **************************************************************************** */
 
  import java.util.ArrayList;
+
+ import edu.princeton.cs.algs4.StdOut;
+ import edu.princeton.cs.algs4.StdDraw;
+ import edu.princeton.cs.algs4.In;
 
  public class TSPVisualizer {
  

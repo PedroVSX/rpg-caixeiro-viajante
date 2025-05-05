@@ -13,9 +13,9 @@
  *
  **************************************************************************** */
 
- import algs4.StdIn;
- import algs4.StdOut;
- import algs4.StdDraw;
+ import edu.princeton.cs.algs4.StdIn;
+ import edu.princeton.cs.algs4.StdOut;
+ import edu.princeton.cs.algs4.StdDraw;
  
  public class SmallestInsertion {
  
@@ -54,7 +54,7 @@
  
          // imprimir o ciclo no terminal padrão
          StdOut.println(tour);
-         StdOut.printf("Comprimento do ciclo = %.4f\n", tour.length());
+         StdOut.println("Comprimento do ciclo = " + tour.length());
          StdOut.printf("Número de pontos = %d\n", tour.size());
      }
  }
