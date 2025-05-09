@@ -1,12 +1,11 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         InputHandler input = new InputHandler();
-        
+
         String[] files = {
             "data/tsp10.txt",
             "data/tsp100.txt",
