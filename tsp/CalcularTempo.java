@@ -25,7 +25,7 @@ public class CalcularTempo {
 
                 fileWriter.write(linhaTempo);
                 n*=2;
-                System.out.println("ta indo");
+//                System.out.println("ta indo");
 
             } while (!(tempoMenorAumento > 60d) || !(tempoVizinhoProximo > 60d));
 
