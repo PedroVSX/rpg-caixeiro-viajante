@@ -11,6 +11,10 @@
  *
  **************************************************************************** */
 
+ import edu.princeton.cs.algs4.StdIn;
+ import edu.princeton.cs.algs4.StdOut;
+ import edu.princeton.cs.algs4.StdDraw;
+
  public class Point { 
     private final double x;   // coordenada cartesiana x
     private final double y;   // coordenada cartesiana y

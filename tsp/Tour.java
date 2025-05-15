@@ -1,11 +1,15 @@
 /* *****************************************************************************
  * Grupo:
- * Alunos integrantes:
+ * Alunos integrantes: Pedro Vieira, Samir Alves, Luiz Arthur, Rafael Luka, Leonardo Coelho
  *
  * Descrição: Esta classe define o tipo de dado Tour implementando uma
  * Lista Encadeada Circular e definindo métodos para permitir a implementação
  * de duas heurísticas para encontrar boas soluções para o TSP.
  **************************************************************************** */
+
+ import edu.princeton.cs.algs4.StdIn;
+ import edu.princeton.cs.algs4.StdOut;
+ import edu.princeton.cs.algs4.StdDraw;
 
  public class Tour {
     private class Node {
@@ -94,12 +98,57 @@
 
     // insere p usando a heurística do vizinho mais próximo
     public void insertNearest(Point p) {
-        // A ser implementado
+        if (start.p == null) {
+            start.p = p;
+            start.next = start;
+            return;
+        }
+
+        Node nearest = start;
+        double minDistance = p.distanceTo(start.p);
+        Node current = start.next;
+
+        while (current != start) {
+            double dist = p.distanceTo(current.p);
+            if (dist < minDistance) {
+                minDistance = dist;
+                nearest = current;
+            }
+            current = current.next;
+        }
+
+        Node newNode = new Node();
+        newNode.p = p;
+        newNode.next = nearest.next;
+        nearest.next = newNode;
     }
 
     // insere p usando a heurística do menor aumento
     public void insertSmallest(Point p) {
-        // A ser implementado
+        if (start.p == null) {
+            start.p = p;
+            start.next = start;
+            return;
+        }
+    
+        Node best = start;
+        double minIncrease = Double.MAX_VALUE;
+        Node current = start;
+
+        do {
+            double increase = current.p.distanceTo(p) + p.distanceTo(current.next.p)
+                              - current.p.distanceTo(current.next.p);
+            if (increase < minIncrease) {
+                minIncrease = increase;
+                best = current;
+            }
+            current = current.next;
+        } while (current != start);
+    
+        Node newNode = new Node();
+        newNode.p = p;
+        newNode.next = best.next;
+        best.next = newNode;
     }
 
     // testa esta classe chamando todos os construtores e métodos de instância

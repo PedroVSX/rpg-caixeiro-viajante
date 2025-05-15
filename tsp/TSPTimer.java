@@ -14,17 +14,60 @@
  *
  **************************************************************************** */
 
- import algs4.StdRandom;
- import algs4.Stopwatch;
- import algs4.StdOut;
+ import edu.princeton.cs.algs4.StdRandom;
+ import edu.princeton.cs.algs4.Stopwatch;
+ import edu.princeton.cs.algs4.StdOut;
  
  public class TSPTimer {
+
+     public static double vizinhoProximo(int n){
+         double lo = 0.0;
+         double hi = 600.0;
+
+         Stopwatch timer1 = new Stopwatch();
+         Tour tour1 = new Tour();
+         for (int i = 0; i < n; i++) {
+             double x = StdRandom.uniformDouble(lo, hi);
+             double y = StdRandom.uniformDouble(lo, hi);
+             Point p = new Point(x, y);
+             tour1.insertNearest(p);
+         }
+         double length1 = tour1.length();
+         double elapsed1 = timer1.elapsedTime();
+
+
+//         StdOut.println("Comprimento do ciclo = " + length1);
+//         StdOut.println("Inserção pelo vizinho mais próximo: " + elapsed1 + " segundos");
+
+         return elapsed1;
+     }
+
+     public static double menorAumento(int n){
+         double lo = 0.0;
+         double hi = 600.0;
+
+         Stopwatch timer2 = new Stopwatch();
+         Tour tour2 = new Tour();
+         for (int i = 0; i < n; i++) {
+             double x = StdRandom.uniformDouble(lo, hi);
+             double y = StdRandom.uniformDouble(lo, hi);
+             Point p = new Point(x, y);
+             tour2.insertSmallest(p);
+         }
+         double length2 = tour2.length();
+         double elapsed2 = timer2.elapsedTime();
+//         StdOut.println("Comprimento do ciclo = " + length2);
+//         StdOut.println("Inserção pelo menor aumento: " + elapsed2 + " segundos");
+
+         return elapsed2;
+     }
  
      public static void main(String[] args) {
          double lo = 0.0;
          double hi = 600.0;
-         int n = Integer.parseInt(args[0]);
- 
+         int n = 1_000;
+//         int n = Integer.parseInt(args[0]);
+
          // gerar dados e executar a heurística de inserção pelo vizinho mais próximo
          Stopwatch timer1 = new Stopwatch();
          Tour tour1 = new Tour();
@@ -55,4 +98,3 @@
          StdOut.println("Inserção pelo menor aumento: " + elapsed2 + " segundos");
      }
  }
- 
