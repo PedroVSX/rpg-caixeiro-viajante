@@ -16,6 +16,7 @@ public class CalcularTempo {
                     | ---- | ------------------------------ | ----------------------- |
                     """);
             do {
+                System.out.println("lendo arquivo...");
                 tempoMenorAumento = TSPTimer.menorAumento(n);
                 tempoVizinhoProximo = TSPTimer.vizinhoProximo(n);
 
@@ -25,7 +26,6 @@ public class CalcularTempo {
 
                 fileWriter.write(linhaTempo);
                 n*=2;
-//                System.out.println("ta indo");
 
             } while (!(tempoMenorAumento > 60d) || !(tempoVizinhoProximo > 60d));
 

@@ -1,3 +1,5 @@
+package Handlers;
+
 import java.util.Scanner;
 
 public class InputHandler {
