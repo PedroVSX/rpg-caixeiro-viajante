@@ -30,6 +30,7 @@ Q4. Preencha os comprimentos calculados pelas suas heurísticas.
 | tsp100.txt       | 7389.9296            | 4887.2190     |
 | tsp1000.txt      | 27868.7106           | 17265.6281    |
 | usa13509.txt     | 77449.9794           | 45074.7769    |
+| tsp85900.txt     | 125660.3433          | 82621.6659    |
 
 Q5. Realize duas análises de tempo
 
@@ -41,6 +42,21 @@ Comente se o valor de \(b\) encontrado é coerente com a análise teórica da co
 - Você pode usar o **TSPTimer** para ajudar, conforme indicado na lista de verificação.
 - Se usar, execute com a opção **-Xint** para desativar otimizações do compilador.
 - Se para \(n = 1000\) o tempo já ultrapassar 60 segundos, seu código está muito lento. Veja a lista de verificação para sugestões de correção.
+
+Resposta:
+Vizinho mais próximo:
+A inserção do primeiro é constante, já o segundo compara com 1 ponto, o terceiro com 2, o quarto com 3 e assim em diante.
+Portanto, teríamos o seguinte: 1+2+3+4+...+(n-2)+(n-1)
+Que é igual a: (n*(n-1)) / 2
+Que portanto é: n^2 / 2
+Assim, a complexidade seria: O(n^2)
+
+Menor aumento:
+A inserção do primeiro também é constante, o segundo compara com 1 aresta, o terceiro com 2 e assim por diante.
+Teríamos portanto: 1+2+3+4+...+(n-2)+(n-1)
+Que é igual a: (n*(n-1)) / 2
+Que portanto é: n^2 / 2
+Assim, a complexidade seria: O(n^2)
 
 | n    | Tempo vizinho mais próximo (s) | Tempo menor aumento (s) |
 | ---- | ------------------------------ | ----------------------- |
