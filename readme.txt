@@ -5,6 +5,8 @@ Orientador: Prof. Me Ricardo Carubbi
 
 Trabalho 2: Problema do Caixeiro Viajante
 
+Equipe: Pedro Vieira, Samir Alves, Rafael Luka, Luiz Arthur, Leonardo Coelho
+
 Horas para completar o trabalho (opcional):
 
 Q1. Explique como você implementou a heurística de inserção pelo vizinho mais próximo.
